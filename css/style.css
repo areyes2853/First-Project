@@ -1,0 +1,214 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+:root{
+    --primary-color: black;
+    --secondary-color:lightgray;
+    --gray:
+}
+html{
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+*,
+::before,
+::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: "Mulish", sans-serif;
+}
+h1,h2,h3{
+    font-family: "Playfair", serif;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 1.6rem 0;
+}
+p{
+    font-weight: 400;
+    margin: 1.6rem 0;
+    font-size:1.6rem;
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+h1{
+    font-size: 4rem;
+}
+
+nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px){
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 3rm;
+    }
+    h4{
+        font-size: 1.6rem;
+    }
+    span{
+        color: var(--gray);
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    a{
+        text-decoration: none;
+        margin: 1.6rem 0;
+        color: var(--gray);
+        font-size: 1.6rem;
+        border-bottom: 2px dotted var(--primary-color);
+    }
+
+    .site-container{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    hr{
+        margin: 16px 0;
+    }
+   
+    }
+    nav .menu a{
+        border-bottom: none;
+        color: var(--primary-color);
+        font-weight: 700px;
+        margin-left: 24px ;
+    }
+    .mobile-menu{
+        display: none;
+
+    }
+/* Hero section */
+.hero{
+    display: grid;
+     grid-template-columns: 2fr 1fr;
+     position: relative;
+}
+.hero .left{
+    background-image: url(/tree.jpeg);
+    background-size: cover;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.hero .right{
+    background-color: grey;
+}
+.hero .content-box{
+    position: absolute;
+    background-color: salmon;
+    padding: 33px;
+    width: 40%;
+    top:30%;
+    left:65%;
+    transform: translate(-40%,-30%);
+}
+/* Blog */
+main{
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr .8fr;
+    margin-top: 20px;
+    grid-gap:3rem;
+    grid-template-areas: 
+    "blog-item blog-item blog-item sidebar sidebar"
+    "blog-item blog-item blog-item sidebar sidebar"
+    "footer footer footer sidebar sidebar";
+
+}
+.blog{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap:2rem;
+}
+.blog .thumbnail{
+    object-fit: contain;
+
+}
+.blog-item{
+    background-color: var(--secondary-color);
+    margin: 40px 0;
+    padding:16px ;
+}
+.blog-content{
+    margin-top: 24px;
+}
+.pagination{
+    display: inline-block;
+   
+}
+.pagination .active{
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+
+}
+.pagination a{
+    color: var(--primary-color);
+    float: left;
+    padding: 8px 8px;
+    border: 0;
+}
+
+@media only screen and (max-widht:768px){
+    .blog{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* side bar */
+
+.wrapper{
+    display: flex;
+    align-items: center;
+}
+.wrapper .thumb{
+    flex:1;
+}
+.wrapper .content{
+    flex:3;
+    padding: 16px;
+}
+.wrapper p,span,a{
+    font-family: 1.6rem;
+    margin: 0;
+}
+@media only screen and (max-width: 768px){
+    .site-container{
+        width: 100%;
+        padding: auto;
+    }
+    main{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* .mulish-<uniquifier> {
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  } */
+
+/* .playfair-<uniquifier> {
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  } */
