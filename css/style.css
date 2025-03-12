@@ -150,16 +150,23 @@ main{
   }
   
   .like-btn,
-  .dislike-btn {
+  .dislike-btn, .comment-btn {
     width: 24px;   /* Adjust icon size */
     height: auto;
     cursor: pointer;
     transition: transform 0.2s;
   }
-  
+  .comment{
+    display:none;
+ }
+ .comment.show{
+    display: inline-block;
+
+ }
   /* Optional hover effect */
   .like-btn:hover,
-  .dislike-btn:hover {
+  .dislike-btn:hover,
+  .comment-btn:hover {
     transform: scale(1.1);
   }
   
