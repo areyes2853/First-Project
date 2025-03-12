@@ -8,7 +8,7 @@
     --gray:
 }
 html{
-    font-size: 100%;
+    font-size: 75%;
     scroll-behavior: smooth;
 }
 *,
@@ -44,6 +44,9 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
+h1{
+    font-family: 4rem;
+}
 
 @media only screen and (max-width: 768px){
     h1{
@@ -51,6 +54,9 @@ nav{
     }
     h2{
         font-size: 3rm;
+    }
+    h3{
+        font-size: 1.6rem;
     }
     h4{
         font-size: 1.6rem;
@@ -99,6 +105,11 @@ nav{
      grid-template-columns: 2fr 1fr;
      position: relative;
 }
+.hero img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
 .hero .left{
     background-image: url(/tree.jpeg);
     background-size: cover;
@@ -121,20 +132,42 @@ nav{
 /* Blog */
 main{
     display: grid;
-    grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
-    grid-template-rows: 0.2fr 1.5fr 1.2fr .8fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1                                                                            fr 1fr .8fr;
     margin-top: 20px;
     grid-gap:3rem;
     grid-template-areas: 
     "blog-item blog-item blog-item sidebar sidebar"
     "blog-item blog-item blog-item sidebar sidebar"
-    "footer footer footer sidebar sidebar";
+    "footer footer footer footer footer";
 
 }
+.like-dislike {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Spacing between icons */
+    margin-top: 1rem; /* Optional spacing above/below */
+  }
+  
+  .like-btn,
+  .dislike-btn {
+    width: 24px;   /* Adjust icon size */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  /* Optional hover effect */
+  .like-btn:hover,
+  .dislike-btn:hover {
+    transform: scale(1.1);
+  }
+  
 .blog{
     display: grid;
     grid-template-columns:1fr 1fr 1fr;
     grid-gap:2rem;
+    grid-area: blog-item;
 }
 .blog .thumbnail{
     object-fit: contain;
@@ -164,27 +197,47 @@ main{
     border: 0;
 }
 
-@media only screen and (max-widht:768px){
+@media only screen and (max-width:768px){
     .blog{
         grid-template-columns: 1fr;
     }
 }
 
 /* side bar */
+aside {
+    grid-area: sidebar;
+}
 
-.wrapper{
+.commented-posts .wrapper{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin-bottom: 1.5rem;
+   
+}
+
+.recent-posts .wrapper{
+    display: flex;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin-bottom: 1.5rem;
+   
+}
+
+.thumb img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 .wrapper .thumb{
     flex:1;
 }
 .wrapper .content{
-    flex:3;
-    padding: 16px;
+    flex:2;
+    padding: 1px;
 }
 .wrapper p,span,a{
-    font-family: 1.6rem;
+    font-size: 1.4rem;
     margin: 0;
 }
 @media only screen and (max-width: 768px){
@@ -196,7 +249,49 @@ main{
         grid-template-columns: 1fr;
     }
 }
-
+/* footer */
+footer{
+    background-color: var(--primary-color);
+     margin-top: 100px;
+    padding: 100px 0; 
+    grid-area: footer;
+}
+footer h3{
+    color: white;
+    font-size: 20px;
+}
+footer p, a, span{
+    color: var(--secondary-color);
+}
+.footer-top{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 0 auto;
+    grid-gap: 16px;
+    justify-items: center;
+}
+.footer-bottom{
+    margin-top:50px;
+    display: flex;
+    justify-content:space-between;
+}
+.footer-menu li{
+    color: white;
+    display: inline-block;
+}
+.social-icons i{
+    color: var(--secondary-color);
+    font-size:16px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 50%;
+    padding:8px;
+}
+@media only screen and (max-width:768px){
+    .footer-top{
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+}
 /* .mulish-<uniquifier> {
     font-family: "Mulish", sans-serif;
     font-optical-sizing: auto;
