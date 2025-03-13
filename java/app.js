@@ -4,11 +4,19 @@
 // })
 
 // Select all "like" buttons
-const likeButtons = document.querySelector('.like-btn');
+// const likeButtons = document.querySelector('.like-btn');
 
 // Select all "dislike" buttons
-const dislikeButtons = document.querySelector('.dislike-btn');
+const dislikeButtons = document.querySelectorAll('.dislike-btn');
+const likeButtons = document.querySelectorAll('.like-btn');
+const addButtons = document.querySelectorAll(".add-btn")
+const paragraphComment = document.querySelector(".recent-posts p")
+const inputElement = document.querySelector('input')
+// console.log(inputElement)
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    
     // Loop over every blog item
     const blogItems = document.querySelectorAll('.blog-item');
     blogItems.forEach((item) => {
@@ -24,5 +32,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+ 
+
+addButtons.forEach((btn)=>{
+    btn.addEventListener('click',()=>{
+        const commentElement = document.createElement('p');
+        commentElement.innerHTML = inputElement.value;
+        paragraphComment.appendChild(commentElement)
+       
+    })
+})
+
   
+
+console.log(likeButtons);
+likeButtons.forEach((btn)=>{
+    btn.addEventListener("click",()=>{
+        console.log('here Iam i')
+        
+    })
+})
   

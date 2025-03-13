@@ -5,7 +5,7 @@
 :root{
     --primary-color: black;
     --secondary-color:lightgray;
-    --gray:
+    --gray:#777;
 }
 html{
     font-size: 75%;
@@ -44,16 +44,14 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
-h1{
-    font-family: 4rem;
-}
+   
 
 @media only screen and (max-width: 768px){
     h1{
         font-size: 3rem;
     }
     h2{
-        font-size: 3rm;
+        font-size: 3rem;
     }
     h3{
         font-size: 1.6rem;
@@ -92,8 +90,8 @@ h1{
     nav .menu a{
         border-bottom: none;
         color: var(--primary-color);
-        font-weight: 700px;
-        margin-left: 24px ;
+        font-weight: 700;
+        margin-left: 24px;
     }
     .mobile-menu{
         display: none;
@@ -130,27 +128,40 @@ h1{
     transform: translate(-40%,-30%);
 }
 /* Blog */
-main{
+main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1                                                                            fr 1fr .8fr;
+    /* Make sure this is a single line with valid spacing: */
+    grid-template-rows: 0.2fr 1fr 1fr 0.8fr;
+    
     margin-top: 20px;
-    grid-gap:3rem;
+    grid-gap: 3rem;
     grid-template-areas: 
-    "blog-item blog-item blog-item sidebar sidebar"
-    "blog-item blog-item blog-item sidebar sidebar"
-    "footer footer footer footer footer";
-
-}
+      "blog-item blog-item blog-item sidebar sidebar"
+      "blog-item blog-item blog-item sidebar sidebar"
+      "footer footer footer footer footer";
+  }
 .like-dislike {
     display: flex;
     align-items: center;
     gap: 8px; /* Spacing between icons */
     margin-top: 1rem; /* Optional spacing above/below */
   }
+  .like-dislike img{
+    width: 20px;
+    height: auto;
+    object-fit:cover;
+  }
+  button.like-btn, button.dislike-btn, button.comment-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
   
-  .like-btn,
-  .dislike-btn, .comment-btn {
+  
+  button.like-btn,
+  button.dislike-btn, button.comment-btn {
     width: 24px;   /* Adjust icon size */
     height: auto;
     cursor: pointer;
@@ -164,9 +175,9 @@ main{
 
  }
   /* Optional hover effect */
-  .like-btn:hover,
-  .dislike-btn:hover,
-  .comment-btn:hover {
+  button.like-btn:hover,
+  button.dislike-btn:hover,
+  button.comment-btn:hover {
     transform: scale(1.1);
   }
   
