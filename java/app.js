@@ -37,63 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
  
 
-// addButtons.forEach((btn)=>{
-//     btn.addEventListener('click',()=>{
-//         const commentElement = document.createElement('p');
-//         if(inputElement.value){
-//         const commentElement = document.createElement('p');
-//         commentElement.innerHTML = inputElement.value;
-//         paragraphComment.appendChild(commentElement);
-//          inputElement.value = ""
-//         }
-        
-        
-       
-//     })
-// })
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const blogItems = document.querySelectorAll('.blog-item');
 
-//   // Selecting elements from the Recent Post section
-//   const recentPostThumbnail = document.querySelector('.recent-thumbnail'); // The image in Recent Posts
-//   const recentPostTitle = document.querySelector('.recent-post-title'); // The h4 in Recent Posts
-//   const recentCommentsContainer = document.querySelector('.recent-comments'); // The container for recent comments
 
-//   blogItems.forEach((item) => {
-//       const addBtn = item.querySelector('.add-btn'); // "Add Comment" button inside the blog post
-//       const inputElement = item.querySelector('.comment'); // Comment input field inside the blog post
-//       const thumbnail = item.querySelector('.like-btn img'); // Blog post thumbnail (inside like button)
-//       const strongText = item.querySelector('p strong'); // The text inside the <strong> tag of the blog post
-
-//       if (addBtn && inputElement && thumbnail && strongText) {
-//           addBtn.addEventListener('click', () => {
-//               const commentText = inputElement.value.trim();
-
-//               if (commentText) {
-//                   // Update Recent Comments section
-//                   const commentElement = document.createElement('p');
-//                   commentElement.innerHTML = commentText;
-//                   recentCommentsContainer.innerHTML = ''; // Clear previous comments if needed
-//                   recentCommentsContainer.appendChild(commentElement);
-
-//                   // Update Recent Post Thumbnail
-//                   if (recentPostThumbnail) {
-//                       recentPostThumbnail.src = thumbnail.src;
-//                   }
-
-//                   // Update Recent Post Title with <strong> text from the blog post
-//                   if (recentPostTitle) {
-//                       recentPostTitle.innerHTML = strongText.innerHTML;
-//                   }
-
-//                   // Clear the input field after adding the comment
-//                   inputElement.value = '';
-//               }
-//           });
-//       }
-//   });
-// });
 
 
 document.addEventListener('DOMContentLoaded', () => {
