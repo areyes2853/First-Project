@@ -173,14 +173,38 @@ main {
     padding: 0;
     cursor: pointer;
   }
-  
-  
+
   button.like-btn,
+button.dislike-btn,
+button.comment-btn {
+  width: 24px;   /* Adjust icon size */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.comment {
+  display: none; /* Hide by default */
+}
+
+.comment.show {
+  display: inline-block; /* Show when 'show' class is present */
+}
+
+.add-btn {
+    display: inline-block; /* Initially visible */
+}
+.add-btn.hidden {
+  display: none; /* Hide when 'hidden' class is added */
+}
+  
+  /* -------------------------------- */
+  /* button.like-btn,
   button.dislike-btn, button.comment-btn {
     width: 24px;   /* Adjust icon size */
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.2s;
+    /* height: auto;
+    cursor: pointer; */
+    /* transition: transform 0.2s;
   }
   .comment, .add-btn{
     display:none;
@@ -191,7 +215,7 @@ main {
  }
 .hidden{
     display: inline-block;
-}
+} */ 
 
 
   /* Optional hover effect */
@@ -201,6 +225,12 @@ main {
     transform: scale(1.1);
   }
   
+  .blog-content span{
+    color:black;
+
+  }
+
+
 .blog{
     display: grid;
     grid-template-columns:1fr 1fr 1fr;
