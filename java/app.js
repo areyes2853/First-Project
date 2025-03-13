@@ -95,7 +95,6 @@
 
 //things i need to improve wrong short on time
 
-
 const blogPostsData = [
   {
     id: 'post1',
@@ -173,6 +172,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const recentPostDate = document.querySelector(".recent-posts .content span");
   const recentPostLink = document.querySelector(".recent-posts .wrapper a"); // Get the <a> tag
 
+    // --- MODAL LOGIC (Start) ---
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p> "Welcome to the Gates of Hell! Once you step through, 
+            your soul embarks on an all-inclusive journey to the Void—no refunds, no exits,
+            and definitely no customer service. Please keep your arms, legs, 
+            and existential dread inside the ride at all times. 
+            Don’t worry, the screaming stops after a few centuries… or so they say. 
+            Enjoy your stay—forever!" 😈🔥"</p>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Prevent scrolling while the modal is open
+    document.body.style.overflow = 'hidden';
+
+    const closeButton = modal.querySelector('.close-button');
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    });
+
+// --- MODAL LOGIC (End) ---
+    
 
   function renderBlogPosts() {
     blogContainer.innerHTML = ""; // Clear existing content
