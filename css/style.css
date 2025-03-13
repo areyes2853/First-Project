@@ -167,13 +167,18 @@ main {
     cursor: pointer;
     transition: transform 0.2s;
   }
-  .comment{
+  .comment, .add-btn{
     display:none;
  }
  .comment.show{
     display: inline-block;
 
  }
+.hidden{
+    display: inline-block;
+}
+
+
   /* Optional hover effect */
   button.like-btn:hover,
   button.dislike-btn:hover,
