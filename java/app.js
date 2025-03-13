@@ -93,3 +93,7 @@ likeButtons.forEach((btn)=>{
     })
 })
   
+const darkModeToggle = document.getElementById('dark-btn');
+darkModeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});

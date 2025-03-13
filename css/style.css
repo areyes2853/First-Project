@@ -22,6 +22,12 @@ html{
 body{
     font-family: "Mulish", sans-serif;
 }
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+
 h1,h2,h3{
     font-family: "Playfair", serif;
     font-weight: 800;
