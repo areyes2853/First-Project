@@ -26,7 +26,16 @@ body.dark-mode {
     background-color: black;
     color: white;
 }
-
+#dark-btn{
+    height: 85px;
+    width: 160px;
+    border-radius: 80%;
+    border: 1rem var(--secondary-color) solid;
+    background-color: var(--primary-color);
+    font-weight: 900;
+    font-size: 1.6rem;
+    color: white
+}
 
 h1,h2,h3{
     font-family: "Playfair", serif;
