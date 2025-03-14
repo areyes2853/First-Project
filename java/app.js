@@ -4,7 +4,7 @@
 // // })
 
 
-//things i need to improve wrong short on time
+//Things I need to improve wrong short on time
 
 const blogPostsData = [
   {
@@ -76,14 +76,16 @@ const blogPostsData = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  const blogContainer = document.querySelector(".blog");
-  const recentPostThumbnail = document.querySelector(".recent-posts .thumb img");
-  const recentPostTitle = document.querySelector(".recent-posts .content h4");
+  const blogContainer = document.querySelector(".blog"); // get blog
+  const recentPostThumbnail = document.querySelector(".recent-posts .thumb img");//get img
+  const recentPostTitle = document.querySelector(".recent-posts .content h4");//get resent post h
   const recentPostComment = document.querySelector(".recent-posts .content p"); //For recent comment
-  const recentPostDate = document.querySelector(".recent-posts .content span");
+  const recentPostDate = document.querySelector(".recent-posts .content span");// get span in recent comment
   const recentPostLink = document.querySelector(".recent-posts .wrapper a"); // Get the <a> tag
 
     // --- MODAL LOGIC (Start) ---
+
+    // create the modal html elements dynamically
     const modal = document.createElement('div');
     modal.classList.add('modal');
     modal.innerHTML = `
@@ -97,11 +99,13 @@ document.addEventListener("DOMContentLoaded", () => {
             Enjoy your stay—forever!" 😈🔥"</p>
         </div>
     `;
+    // make the element
     document.body.appendChild(modal);
 
     // Prevent scrolling while the modal is open
     document.body.style.overflow = 'hidden';
 
+//ad eventlistener when clicking the close button
     const closeButton = modal.querySelector('.close-button');
     closeButton.addEventListener('click', () => {
         modal.style.display = 'none';
@@ -110,13 +114,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // --- MODAL LOGIC (End) ---
     
+//-- starting blog code with function to render all blog posts
 
   function renderBlogPosts() {
     blogContainer.innerHTML = ""; // Clear existing content
-
+//create Html for each blog post
     blogPostsData.forEach((post) => {
       const blogItem = document.createElement("div");
-      blogItem.classList.add("blog-item");
+      blogItem.classList.add("blog-item");//updating Css
       blogItem.innerHTML = `
                 <div class="blog-post">
                     <div class="thumbnail">
