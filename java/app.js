@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
       target.closest(".like-btn")
     ) {
       const btn = target.closest(".like-btn");
-      const postId = btn.dataset.postId;
+      const postId = btn.dataset.postId;//handle custome data
       const postIndex = blogPostsData.findIndex((post) => post.id === postId);
       if (postIndex !== -1) {
         blogPostsData[postIndex].likes++;
@@ -264,3 +264,69 @@ const darkModeToggle = document.getElementById("dark-btn");
 darkModeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
+
+//old code
+
+// function updateRecentPost(thumbnailSrc, titleText, commentText) {
+//   const recentPostThumbnail = document.querySelector('.recent-posts .thumb img');
+//   const recentPostTitle = document.querySelector('.recent-posts .content h4');
+//   const recentPostComment = document.querySelector('.recent-posts .content p');
+
+//   if (recentPostThumbnail) {
+//     recentPostThumbnail.src = thumbnailSrc;
+//   }
+//   if (recentPostTitle) {
+//     recentPostTitle.innerHTML = titleText;
+//   }
+//   if (recentPostComment) {
+//     recentPostComment.innerHTML = commentText;
+//   }
+// }
+
+// // Select all blog items
+// const blogItems = document.querySelectorAll('.blog-item');
+
+// // Loop through each blog item
+// blogItems.forEach((item) => {
+//   // Destructure elements from the blog item
+//   const {
+//     querySelector: q, // Shorthand for querySelector
+//   } = item;
+
+//   const commentBtn = q('.comment-btn');
+//   const commentInput = q('.comment');
+//   const addBtn = q('.add-btn');
+//   const thumbnail = q('.thumbnail img');
+//   const strongText = q('p strong');
+
+//   // Comment button toggle
+//   if (commentBtn && commentInput) {
+//     commentBtn.addEventListener('click', () => {
+//       commentInput.classList.toggle('show');
+//       addBtn?.classList.toggle('hidden'); // Optional chaining incase addBtn is null
+//     });
+//   }
+
+//   // Add comment functionality
+//   if (addBtn && commentInput && thumbnail && strongText) {
+//     addBtn.addEventListener('click', () => {
+//       const commentText = commentInput.value.trim();
+//       const thumbnailSrc = thumbnail.src;
+//       const titleText = strongText.innerHTML;
+
+//       if (commentText) {
+//         // Update Recent Post section
+//         updateRecentPost(thumbnailSrc, titleText, commentText);
+
+//         // Clear the input field
+//         commentInput.value = '';
+//       }
+//     });
+//   }
+// });
+
+
+// const dislikeButtons = document.querySelectorAll('.dislike-btn');
+// const likeButtons = document.querySelectorAll('.like-btn');
+// const paragraphComment = document.querySelector(".recent-posts p");
+// const inputElement = document.querySelector('input');
